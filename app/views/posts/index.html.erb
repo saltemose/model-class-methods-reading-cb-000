@@ -4,6 +4,10 @@
   <% @posts = Post.where(author:params[:author]) %>
 <% end %>
 
+<% if !params[:date].blank? %>
+  <% @posts = Post.where(date:params[:author]) %>
+<% end %>
+
 <div>
   <h3>Filter posts:</h3>
   <%= form_tag("/posts", method: "get") do %>
